@@ -82,6 +82,7 @@ do_install:append () {
 }
 
 INSANE_SKIP:${PN} = "already-stripped ldflags dev-so textrel"
+INSANE_SKIP:${PN}-dev = "staticdev"
 
 INHIBIT_PACKAGE_DEBUG_SPLIT = "1"
 INHIBIT_PACKAGE_STRIP = "1"
@@ -96,5 +97,6 @@ FILES:${PN}:append = " \
 
 FILES:${PN}-dev = " \
 	${includedir} \
+	${libdir}/lib*.a \
 	${libdir}/pkgconfig \
 "
